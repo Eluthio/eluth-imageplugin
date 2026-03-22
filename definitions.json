@@ -9,6 +9,6 @@
   "tags": ["media", "images", "upload"],
   "recommended": true,
   "changelog": {
-    "1.0.4": "Fixed CSS bundling and missing styles"
+    "1.0.5": "Add definitions.json; min_server_version support"
   }
 }
