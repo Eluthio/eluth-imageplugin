@@ -9,6 +9,7 @@
   "tags": ["media", "images", "upload"],
   "recommended": true,
   "changelog": {
+    "1.0.7": "Fix catalogue webhook registration",
     "1.0.5": "Add definitions.json; min_server_version support"
   }
 }

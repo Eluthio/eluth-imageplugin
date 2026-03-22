@@ -1,7 +1,7 @@
 {
   "name": "Image Uploader",
   "slug": "image-uploader",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "min_server_version": "1.1.0",
   "tier": "official",
   "zones": [
