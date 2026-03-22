@@ -1,0 +1,8 @@
+{
+  "name": "Image Uploader",
+  "slug": "image-uploader",
+  "version": "1.0.0",
+  "tier": "official",
+  "zones": ["input"],
+  "settings": []
+}
