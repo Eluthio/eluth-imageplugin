@@ -90,14 +90,16 @@ async function upload(file) {
             })
             xhr.addEventListener('load', () => {
                 progress.value = 100
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    resolve(JSON.parse(xhr.responseText))
-                } else {
-                    reject(new Error(JSON.parse(xhr.responseText)?.message || 'Upload failed.'))
+                try {
+                    const body = JSON.parse(xhr.responseText)
+                    if (xhr.status >= 200 && xhr.status < 300) resolve(body)
+                    else reject(new Error(body?.message || 'Upload failed.'))
+                } catch {
+                    reject(new Error(`Upload failed (${xhr.status}).`))
                 }
             })
             xhr.addEventListener('error', () => reject(new Error('Network error.')))
-            xhr.open('POST', props.apiBase.replace(/\/$/, '') + '/api/plugins/image-uploader/upload')
+            xhr.open('POST', props.apiBase.replace(/\/$/, '') + '/plugins/image-uploader/upload')
             xhr.setRequestHeader('Authorization', 'Bearer ' + props.authToken)
             xhr.send(formData)
         }).then(data => {
